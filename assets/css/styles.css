@@ -759,20 +759,25 @@ img{
 .blog__date {
     font-size: var(--small-font-size);
     color: var(--text-color-light);
-    text-align: left;
-    justify-content: left;
+    text-align: center;
+    justify-content: cen;
 }
 .blog__card{
     position: relative;
     background-color: var(--container-color);
-    padding: 1.5rem;
-    border-radius: .25rem;
-    box-shadow: 0 2px 4px rgba(0,0,0,.15);
+    padding: 1rem;
+    border-radius: .5rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,.25);
     transition: .3s;
 }
 
+.blog__content {
+    text-align: left;
+    
+}
+
 .blog__card:hover{
-    box-shadow: 0 4px 8px rgba(0,0,0,.15);
+    box-shadow: 0 4px 8px rgba(0,0,0,.25);
 }
 .blog__cardsummary{
     display: flex;
