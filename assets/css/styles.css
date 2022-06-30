@@ -759,6 +759,11 @@ img{
 
 }
 
+.blog__text {
+    color: black;
+    text-align: center;;
+}
+
 .blog__container{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
