@@ -1027,7 +1027,8 @@ img{
 
 /*==================== CONTACT ME ====================*/
 .contact__container{
-    row-gap: 3rem;
+    padding: auto;
+    /* row-gap: 3rem; */
 }
 
 .contact__information{
@@ -1062,16 +1063,6 @@ img{
     color: var(--title-color);
 }
 
-.contact__input{
-    width: 100%;
-    background-color: var(--input-color);
-    color: var(--text-color);
-    font-family: var(--body-font);
-    font-size: var(--normal-font-size);
-    border: none;
-    outline: none;
-    padding: .25rem .5rem .5rem 0;
-}
 /*==================== FOOTER ====================*/
 .footer{
     padding-top: 2rem;
