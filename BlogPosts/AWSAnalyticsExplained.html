@@ -75,27 +75,290 @@
         </header>
 <body>
     <br>
-    <div class="blog__contents">
+    <div>
         <div class="blog__header">
-            <a href="../blog.html"><h3 class="blog__back">View all articles</h3></a>
             <h1 class="blog__post-title"> AWS Analytics Explained</h1>
             <p class="blog__date-spread">
                 <i class="uil uil-calendar-alt"></i>
-                <span>June 28, 2022</span>
+                <span>July 4, 2022</span>
             </p>
-
+            <a href="../blog.html"><h3 class="blog__back">View all articles</h3></a>
         </div>
-        <p class="blog__text">
-            Why do we need to analyze our data?
-            <br>Data analysis allows us to understand how consumers are using our products and services. <br> This can help us to improve our products and services and cater to our customers better.
-
+    </div>
+    <div class="blog__wrapper">
+        <h1 class="blog__paragraph-title"> Why do we need to analyze our data?</h2>
+        <p class="blog__paragraph">
+            Data analysis allows us to understand how consumers are using our products and services. This can help us to improve our products and services and cater to our customers better.
         </p>
 
-    </div>
+        <h1 class="blog__paragraph-title">
+            What is AWS Analytics?
+        </h1>
+        <p class="blog__paragraph">
+            AWS Analytics is a group of services that allows you to analyze any data that is stored within the cloud.
+            For customer data, AWS analytics is responsible for forwarding data to AWS services that can process and extract information and trends.
+            For cloud usage, it provides you with a dashboard that shows you the monitoring metrics one has set up regarding AWS usage and can provide a means to act on the corresponding metrics.
+        </p>
+        <h1 class="blog__paragraph-title">
+            What are the services that AWS Analytics provides?
+        </h1>
+            <ol>
+                <li class="blog__paragraph-list"><a class="blog__paragraph-list-text"href="AWSAnalyticsExplained.html#athena" class="nav__link">Amazon Athena</a></li>
+                <li class="blog__paragraph-list"><a class="blog__paragraph-list-text"href="AWSAnalyticsExplained.html#Elasticsearch" class="nav__link">Amazon Elasticsearch</a></li>
+                <li class="blog__paragraph-list"><a class="blog__paragraph-list-text"href="AWSAnalyticsExplained.html#emr" class="nav__link">Amazon EMR</a></li>
+                <li class="blog__paragraph-list"><a class="blog__paragraph-list-text"href="AWSAnalyticsExplained.html#data_streams" class="nav__link">Amazon Data Streams</a></li>
+                <li class="blog__paragraph-list"><a class="blog__paragraph-list-text"href="AWSAnalyticsExplained.html#firehose" class="nav__link">Amazon Kinesis Data Firehose</a></li>
+                <li class="blog__paragraph-list"><a class="blog__paragraph-list-text"href="AWSAnalyticsExplained.html#msk" class="nav__link">Amazon MSK</a></li>
+                <li class="blog__paragraph-list"><a class="blog__paragraph-list-text"href="AWSAnalyticsExplained.html#redshift" class="nav__link">Amazon Redshift</a></li>
+                <li class="blog__paragraph-list"><a class="blog__paragraph-list-text"href="AWSAnalyticsExplained.html#glue" class="nav__link">AWS Glue</a></li>
+                <li class="blog__paragraph-list"><a class="blog__paragraph-list-text"href="AWSAnalyticsExplained.html#lake_formation" class="nav__link">AWS Lake Formation</a></li>
+            </ol>
+            <br>
+
+<!-- Begin Here -->
+        <!-- Athena -->
+            <h1 class="blog__paragraph-title" id="athena"> Amazon Athena</h1>
+            <h2 class="blog__paragraph-subtitle">What is it? </h2>
+            <p class="blog__subparagraph">
+                Amazon Athena is an interactive serverless service used to analyze data directly in Amazon Simple Storage Service (S3) by
+                using standard SQL queries when needed.
+            </p>
+            <h2 class="blog__paragraph-subtitle">What are the functions of Athena?</h2>
+            <ul>
+                <li class="blog__subparagraph">Can analyze structured, unstructured, semi-structured data that is stored in Amazon S3</li>
+                <li class="blog__subparagraph">Can query data using Athena and SQL without actually loading the data into Athena (using metadata)</li>
+                <li class="blog__subparagraph">Can be integrated with Amazon Quicksight for data visualization</li>
+                <li class="blog__subparagraph">Can integrate with AWS Glue Data Catalog to store metadata in S3</li>
+                <li class="blog__subparagraph">Executes queries in parallel, so no micro managing of compute power</li>
+            </ul>
+            <h2 class="blog__paragraph-subtitle">What is the pricing of Athena?</h2>
+            <ul>
+                <li class="blog__subparagraph">Users are charged by the amount of data that is scanned, rated by the standard S3 pricing</li>
+                <li class="blog__subparagraph">Cancelled queries are charged for the amount of data scanned at the time of cancellation</li>
+                <li class="blog__subparagraph">There are no charges for DDL statements (SQL statements)</li>
+                <li class="blog__subparagraph">One can reduce costs through compressing the data, partitioning, or converting to columnar format</li>
+            </ul>
+            <h2 class="blog__paragraph-subtitle">Use case: Streaming Analytics</h2>
+            <p class="blog__subparagraph">
+                <img class="blog__analyticsimage" src="./AWSAnalyticsResources/AWSAnalytics.drawio.png">
+                In the following use case, we are analyzing streaming data from Amazon Kinesis Data Firehose.
+                The data initially is the clickstream from a user on a website.
+                Firehose takes the data, converts the data to columnar format, then stores it into an S3 bucket to be analyzed.
+                This data is stored in Amazon S3 by using the Kinesis Data Firehose.
+                The data is then analyzed using Athena from the S3 bucket
+                Finally, Amazon Quicksight is used to visualize the data and provide crucial insights for business intelligence services.
+            </p>
+        <!-- Elasticsearch -->
+            <h1 class="blog__paragraph-title" id="Elasticsearch"> Amazon Elasticsearch</h1>
+            <h2 class="blog__paragraph-subtitle">What is it? </h2>
+            <p class="blog__subparagraph">
+            </p>
+            <h2 class="blog__paragraph-subtitle">What are the functions of Elasticsearch?</h2>
+            <ul>
+                <li class="blog__subparagraph">Free and opensource search engine for all types of data: (textual, numerical, geospatial, structured, and unstructured)</li>
+                <li class="blog__subparagraph">Typically combined with Kibana allowing for visualization</li>
+            </ul>
+            <h2 class="blog__paragraph-subtitle">What is the pricing of Elasticsearch?</h2>
+            <ul>
+                <li class="blog__subparagraph">EC2 pricing for data retrieved</li>
+                <li class="blog__subparagraph">No charge for data transferred between zones</li>
+            </ul>
+            <h2 class="blog__paragraph-subtitle">Use case: </h2>
+            <p class="blog__subparagraph">
+                <img src="./AWSAnalyticsResources/AmazonElasticsearch.png">  
+                In this usecase, we will be monitoring the actions taken by customer support agents in a company. 
+                Amazon connect is a cloud contact center that allows the use of AI / ML to automate customer support interactions.
+                It is important to monitor decisions made by these AI / ML agents as they are made autonomously without human intervention.
+                If there was an issue with an action taken by an agent, one would want to know what the action was, the time it was taken, and the outcome of the action.
+                Amazon connect forwards the logs using Kinesis data streams, Kinesis data firehose, and Lambda functions to Amazon Elasticsearch and an S3 bucket.
+                Elasticsearch can be used to analyze the data and visualize the data with Kabana.
+                An example of a Kabana visualization is shown below.
+                <img src="./AWSAnalyticsResources/Kibana.jpeg">
+            </p>
+        <!-- EMR -->
+            <h1 class="blog__paragraph-title" id="emr"> Amazon EMR</h1>
+            <h2 class="blog__paragraph-subtitle">What is it? </h2>
+            <p class="blog__subparagraph">
+                Amazon EMR (Elastic Map Reduce) is a service for processing and analyzing large amounts of data in the cloud using apache hive, hadoop, apache flink, and apache spark.
+            </p>
+            <h2 class="blog__paragraph-subtitle">What are the functions of Amazon EMR?</h2>
+            <ul>
+                <li class="blog__subparagraph">Main component is collecting of EC2 instances (aka nodes)</li>
+                <li class="blog__subparagraph">Decouples compute and storage with EC2 by storing cluster data on S3</li>
+                <li class="blog__subparagraph">Controls the network access for instances</li>
+                <li class="blog__subparagraph">Offers monitoring, replacement of failed instances, and bug fixes</li>
+                <li class="blog__subparagraph">Analyzes machine learning workloads</li>
+                <li class="blog__subparagraph">Allows the use of 3 compute resources: EC2, EKS, and Outposts</li>
+
+            </ul>
+            <h2 class="blog__paragraph-subtitle">What is the pricing of Amazon EMR?</h2>
+            <ul>
+                <li class="blog__subparagraph">You pay a per-second rate for every second you use, with a one minute minimum</li>
+                <li class="blog__subparagraph">Example: 10-node cluster running for 10 hours costs the same as a 100-node cluster running for 1 hour</li>
+                <li class="blog__subparagraph">Dependent on the type of EC2 instances selected for the correct amount of processing power required</li>
+            </ul>
+            <h2 class="blog__paragraph-subtitle">Use case: </h2>
+            <p class="blog__subparagraph">
+                Amazon EMR is commonly used in Machine Learning, Big Data, and Bioinformatics. A common example would be a smart watch sending all data and running some select EC2 instances everytime new data is sent.
+            </p>
+        <!-- Data Streams -->
+            <h1 class="blog__paragraph-title" id="data_streams"> Amazon Data Streams</h1>
+            <h2 class="blog__paragraph-subtitle">What is it? </h2>
+            <p class="blog__subparagraph">
+                Realtime data streaming service. Captures GBs of data from sources like website clickstreams, events streams (database and location tracking), and social media feeds.
+                The Kinesis family is made up of the following: Datastreams, Firehose, Data Analytics, and Video Streams.
+            </p>
+            <h2 class="blog__paragraph-subtitle">What are the functions of Amazon Data Streams?</h2>
+            <ul>
+                <li class="blog__subparagraph">Producers produce data to be processed and it forwards the data to consumers that read or "consume" the data</li>
+                <li class="blog__subparagraph">Data streams are divided into shards/partitions whose default retention period is 1 day but can retain for up to 7 days</li>
+                <li class="blog__subparagraph">Kinesis producer library or KPL for short is a library allows for high throughput to the Kinesis data streams</li>
+                <li class="blog__subparagraph">Goal for Kinesis is to move batch data processing into real-time processing for critical objectives</li>
 
 
-
-
+            </ul>
+            <h2 class="blog__paragraph-subtitle">What is the pricing of Amazon Data Streams?</h2>
+            <ul>
+                <li class="blog__subparagraph">$0.04 per stream per hour</li>
+                <li class="blog__subparagraph">$0.08 data ingested, per GB (includes 24-hour retention)</li>
+                <li class="blog__subparagraph">$0.04 data retrievals, per GB</li>
+                <li class="blog__subparagraph">$0.10 data stored, per GB-month (beyond 24 hours, up to 7 days</li>
+            </ul>
+            <h2 class="blog__paragraph-subtitle">Use case: </h2>
+            <p class="blog__subparagraph">
+                This can be used for a variety of use cases, for example: fraud detection, live leaderboards, and video processing.
+                In this use case we will cover the latter. Using a security camera, we can forward the feed with Kinesis data streams.
+                This feed can fed into AWS Sagemaker / Rekognition Video to automatically detect objects in the video.
+                This has a variety of use cases ranging from detecting a firearm in a video, to detecting a person in a video.
+            </p>
+        <!-- Kinesis Data Firehose -->
+            <h1 class="blog__paragraph-title" id="firehose"> Amazon Kinesis Data Firehose</h1>
+            <h2 class="blog__paragraph-subtitle">What is it? </h2>
+            <p class="blog__subparagraph">
+                Serverless service that loads data stores and analytics services by capturing, transforming, and load streaming data.
+            </p>
+            <h2 class="blog__paragraph-subtitle">What are the functions of Amazon Kinesis Data Firehose?</h2>
+            <ul>
+                <li class="blog__subparagraph">Synchronously replicates data across 3 area zones</li>
+                <li class="blog__subparagraph">Allows for encryption before delivery</li>
+                <li class="blog__subparagraph">60 second batch latency, or minimum data transfer of 32 MB</li>
+                <li class="blog__subparagraph">Cloudwatch events can be source</li>
+            </ul>
+            <h2 class="blog__paragraph-subtitle">What is the pricing of Kinesis Data Firehose?</h2>
+            <ul>
+                <li class="blog__subparagraph">First 500 TB per month: $0.029 per GB ingested</li>
+                <li class="blog__subparagraph">Next 1.5 PB per month: $0.025 per GB ingested</li>
+                <li class="blog__subparagraph">Next 3 PB per month: $0.02 per GB ingested</li>
+            </ul>
+            <h2 class="blog__paragraph-subtitle">Use case: </h2>
+            <p class="blog__subparagraph">
+                The majority of the use cases for this service is to serve as a data transfer service to S3, Redshift, Elasticsearch, and Splunk.
+            </p>
+        <!-- Amazon MSK -->
+            <h1 class="blog__paragraph-title" id="msk"> Amazon MSK <br> (Managed Streaming for Apache Kafka)</h1>
+            <h2 class="blog__paragraph-subtitle">What is it? </h2>
+            <p class="blog__subparagraph">
+                Amazon MSk is a managed cluster service used to build and execute Apache Kafka Applications for the processing of streaming data.
+            </p>
+            <h2 class="blog__paragraph-subtitle">What are the functions of Amazon MSK?</h2>
+            <ul>
+                <li class="blog__subparagraph">Populates ML apps, analytical apps, data lakes, and stream changes to and from databases using Apache Kafka APIs</li>
+                <li class="blog__subparagraph">Easily configures applications by removing all the manual tasks used to configure</li>
+                <li class="blog__subparagraph">Replacing failing servers</li>
+                <li class="blog__subparagraph">Handling server patches and upgrades without downtime</li>
+                <li class="blog__subparagraph">Maintenance of Apache Clusters</li>
+                <li class="blog__subparagraph">Maintenance of Apache Zookeeper</li>
+                <li class="blog__subparagraph">Multi-AZ replication for Apache Kafka clusters</li>
+                <li class="blog__subparagraph">Planning scaling events</li>
+            </ul>
+            <h2 class="blog__paragraph-subtitle">What is the pricing of Amazon MSK?</h2>
+            <ul>
+                <li class="blog__subparagraph">Varies based on the time and CPU power of the instances rented (similar to EC2) </li>
+            </ul>
+            <h2 class="blog__paragraph-subtitle">How is it different from Kinesis?</h2>
+            <p class="blog__subparagraph">
+                Kinesis has at least once delivery, whereas MSK guarantees exactly once.
+            </p>
+            <h2 class="blog__paragraph-subtitle">Use case: Integration</h2>
+            <p class="blog__subparagraph">
+                Amazon MSK's sole purpose is to integrate well with AWS Glue, Kinesis Data Analytics, and Lambda.
+                Glue executes an Apache Spark job on a MSK Cluster, whereas RDA executes Apache Flink job on a Cluster.
+            </p>
+            <!-- Redshift -->
+            <h1 class="blog__paragraph-title" id="redshift"> Amazon Redshift</h1>
+            <h2 class="blog__paragraph-subtitle">What is it? </h2>
+            <p class="blog__subparagraph">
+                Fast and petabyte scale, SQL based, data warehouse to analyze data easily. Along with this, it is also commonly used to perform large scale data migrations.
+            </p>
+            <h2 class="blog__paragraph-subtitle">What are the functions of Amazon Redshift</h2>
+            <ul>
+                <li class="blog__subparagraph">Supports online analytical processing (OLAP) and analyzes using SQL and existing business intelligence tools (quicksight or tableau)</li>
+                <li class="blog__subparagraph">Redshift spectrum can query files on S3 using metadata and without loading</li>
+                <li class="blog__subparagraph">Can copy snapshots from one region to another</li>
+            </ul>
+            <h2 class="blog__paragraph-subtitle">What is the pricing of Amazon Redshift?</h2>
+            <ul>
+                <li class="blog__subparagraph">Starts small at $0.25 per hour and can scale up to petabytes of data and thousands of concurrent users</li>
+                <li class="blog__subparagraph">The node type one chooses to build their cluster effects pricing</li>
+                <li class="blog__subparagraph">The region where the cluster is located effects pricing</li>
+                <li class="blog__subparagraph">Billing strategy: on demand or reserved</li>
+            </ul>
+            <h2 class="blog__paragraph-subtitle">Use case: </h2>
+            <p class="blog__subparagraph">
+                The goal for Amazon Redshift is to allow for the building of an entire business intelligence to occur over a weekend.
+                Anytime one has data that needs to be analyzed from a data lake, they can use Amazon Redshift to analyze the data.
+                 
+            </p>
+            <!-- Glue -->
+            <h1 class="blog__paragraph-title" id="glue"> AWS Glue </h1>
+            <h2 class="blog__paragraph-subtitle">What is it? </h2>
+            <p class="blog__subparagraph">
+                AWS Glue is a serverless extract, transform, and load service used to categorize data and move data between various data stores and streams.
+            </p>
+            <h2 class="blog__paragraph-subtitle">What are the functions of AWS Glue?</h2>
+            <ul>
+                <li class="blog__subparagraph">Works with: Redshift (data warehouse), S3, Data Lakes, RDS, or EC2 (for data stores)  </li>
+                <li class="blog__subparagraph">Supports data integrations, data analytics, and ML</li>
+                <li class="blog__subparagraph">Central repository known as glue catalog that auto generates python/scala code</li>
+                <li class="blog__subparagraph">Acts as a bridge from multiple data sources to AWS Redshift</li>
+            </ul>
+            <h2 class="blog__paragraph-subtitle">What is the pricing of AWS Glue?</h2>
+            <ul>
+                <li class="blog__subparagraph">$0.44 per DPU hour, billed per second, with a 1 minute minimum.</li>
+                <li class="blog__subparagraph">$1.00 per 100,000 objects stored in the Glue Catalog per month</li>
+                <li class="blog__subparagraph">$1.00 per million requests for objects stored in the Glue Catalog per month</li>
+            </ul>
+            <h2 class="blog__paragraph-subtitle">Use case: </h2>
+            <p class="blog__subparagraph">
+                In a data centric world, we need ways to centralize data and make it easy to access for analysis and business intelligence. 
+                AWS Glue solves the problem of centralizing data by providing a service to merge data from multiple sources into a single data store.
+                This allows for easy access to data from multiple sources, and allows for easy data analysis.
+            </p>
+            <!-- Lake Formation -->
+            <h1 class="blog__paragraph-title" id="lake_formation"> AWS Lake Formation</h1>
+            <h2 class="blog__paragraph-subtitle">What is it? </h2>
+            <p class="blog__subparagraph">
+                AWS Lake Formation is a managed service that allows you to create, manage, and access data lakes. 
+                A data lake is a repository that stores all data in its original form and is used for analysis.
+            </p>
+            <h2 class="blog__paragraph-subtitle">What are the functions of AWS Lake Formation</h2>
+            <ul>
+                <li class="blog__subparagraph">Manages the creation/deletion of data lakes</li>
+                <li class="blog__subparagraph">Can secure data lakes</li>
+                <li class="blog__subparagraph">Built on S3 so it has the same 99.999999999% durability</li>
+                <li class="blog__subparagraph">Catalogs and indexes for analysis without data movement</li>
+            </ul>
+            <h2 class="blog__paragraph-subtitle">What is the pricing of AWS Lake Formation?</h2>
+            <ul>
+                <li class="blog__subparagraph">S3 Pricing applies here</li>
+                <li class="blog__subparagraph">$2.25 per TB of data scanned</li>
+            </ul>
+            <h2 class="blog__paragraph-subtitle">Use case: </h2>
+            <p class="blog__subparagraph">
+                Fanatics uses Amazon Simple Storage Service (Amazon S3) to provide secure, durable, and highly scalable storage for its analytical data. Using the Amazon S3 web service interface, the Fanatics data science team can easily store and quickly retrieve any amount of data. Taking advantage of its new AWS data lake solution, Fanatics is now able to analyze the huge volumes of data from its transactional, e-commerce, and back-office systems, and make this data available to its data scientists immediately for analytics.
+            </p>
+        </div>
+</div>
 
 
 
