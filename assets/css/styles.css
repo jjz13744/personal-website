@@ -924,6 +924,9 @@ img{
     font-style: normal;
     letter-spacing: -0.003em;
 }
+.blog__paragraph-list-text:hover {
+    color: var(--first-color-alt);
+}
 
 .blog__hidden{
     display: none;
