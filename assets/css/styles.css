@@ -1086,6 +1086,7 @@ img{
     font-size: var(--small-font-size);
 }
 .footer__links{
+    padding-top: 1rem;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -1173,6 +1174,7 @@ img{
         padding: 2rem .25rem 4rem;
     }
     .nav__list{
+        padding-top: 2rem;
         column-gap: 0;
     }
 
@@ -1394,6 +1396,7 @@ img{
         column-gap: 2rem;
     }
     .footer__socials{
+        padding-top: 1rem;
         justify-self: flex-end;
     }
     .footer__copy{
