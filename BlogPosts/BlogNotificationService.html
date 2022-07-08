@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="apple-touch-icon" sizes="180x180" href="../icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../icons/favicon-16x16.png">
+    <link rel="manifest" href="../icons/site.webmanifest">
+    <link rel="mask-icon" href="../icons/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--==================== UNICONS ====================-->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--==================== SWIPER CSS ====================-->
+    <link rel="stylesheet" href="../assets/css/swiper-bundle.min.css">
+
+    <!--==================== CSS ====================-->
+    <link rel="stylesheet" href="../assets/css/styles.css">
+
+    <title>Jared Zengo</title>
+</head>
+<body>
+    <!--==================== HEADER ====================-->
+        <header class="header" id="header">
+            <nav class="nav container">
+                <a href="#" class="nav__logo">Jared Zengo</a>
+                <div class="nav__menu" id="nav-menu">
+                    <ul class="nav__list grid">
+                        <li class="nav__item">
+                            <a href="../index#home" class="nav__link">
+                                <i class="uil uil-estate nav__icon"></i> Home
+                            </a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="../index#about" class="nav__link">
+                                <i class="uil uil-user nav__icon"></i> About
+                            </a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="../index#skills" class="nav__link">
+                                <i class="uil uil-file-alt nav__icon"></i> Skills
+                            </a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="../index#services" class="nav__link">
+                                <i class="uil uil-briefcase-alt nav__icon"></i> Services
+                            </a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="../blog" class="nav__link active-link">
+                                <i class="uil uil-scenery nav__icon"></i> Blog
+                            </a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="../index#contact" class="nav__link">
+                                <i class="uil uil-estate nav__icon"></i> Contact Me
+                            </a>
+                        </li>
+                    </ul>
+                    <i class="uil uil-times nav__close" id="nav-close"></i>
+                </div>
+    
+                <div class="nav__btns">
+                    <!--Theme change button-->
+                    <i class="uil uil-moon change-theme" id="theme-button"></i>
+    
+                    <div class="nav__toggle" id="nav-toggle">
+                        <i class="uil uil-apps"></i>
+                    </div>
+                </div>
+            </nav>
+        </header>
+<body>
+    <br>
+    <div>
+        <div class="blog__header">
+            <h1 class="blog__post-title">Blog notification service with Python and AWS</h1>
+            <p class="blog__date-spread">
+                <i class="uil uil-calendar-alt"></i>
+                <span>July 8, 2022</span>
+            </p>
+            <a href="../blog"><h3 class="blog__back">View all articles</h3></a>
+        </div>
+    </div>
+    <div class="blog__wrapper">
+        <h1 class="blog__paragraph-title"> How does this work?</h2>
+        <p class="blog__paragraph">
+            Using Python and AWS Lambda, I am able to create a function that will be triggered by a CloudWatch event and will send a text message to a phone number when a new blog post on my friend's website is posted.    
+        </p>
+
+        <h1 class="blog__paragraph-title">
+            Why are you doing this?
+        </h1>
+        <p class="blog__paragraph">
+            My friend has not gotten around to building an email list for his blog, so I am able to send a text message to my phone when a new blog post is posted.
+            This way I can stay up to date with my friend's blog without having to repeatedly check his website.    
+        </p>
+        <h1 class="blog__paragraph-title">
+            What will I learn from this?
+        </h1>
+            <ol>
+                <li class="blog__paragraph-list"><a class="blog__paragraph-list-text"href="BlogNotificationService#scraping" class="nav__link">Scraping a website with Python</a></li>
+                <li class="blog__paragraph-list"><a class="blog__paragraph-list-text"href="BlogNotificationService#Elasticsearch" class="nav__link">Amazon Elasticsearch</a></li>
+                <li class="blog__paragraph-list"><a class="blog__paragraph-list-text"href="BlogNotificationService#emr" class="nav__link">Amazon EMR</a></li>
+                <li class="blog__paragraph-list"><a class="blog__paragraph-list-text"href="BlogNotificationService#data_streams" class="nav__link">Amazon Data Streams</a></li>
+                <li class="blog__paragraph-list"><a class="blog__paragraph-list-text"href="BlogNotificationService#firehose" class="nav__link">Amazon Kinesis Data Firehose</a></li>
+                <li class="blog__paragraph-list"><a class="blog__paragraph-list-text"href="BlogNotificationService#msk" class="nav__link">Amazon MSK</a></li>
+                <li class="blog__paragraph-list"><a class="blog__paragraph-list-text"href="BlogNotificationService#redshift" class="nav__link">Amazon Redshift</a></li>
+                <li class="blog__paragraph-list"><a class="blog__paragraph-list-text"href="BlogNotificationService#glue" class="nav__link">AWS Glue</a></li>
+                <li class="blog__paragraph-list"><a class="blog__paragraph-list-text"href="BlogNotificationService#lake_formation" class="nav__link">AWS Lake Formation</a></li>
+            </ol>
+            <br>
+
+<!-- Begin Here -->
+        <!-- Athena -->
+            <h1 class="blog__paragraph-title" id="scraping"> Scraping a website with Python</h1>
+            <h2 class="blog__paragraph-subtitle">What is it? </h2>
+            <p class="blog__subparagraph">
+                Amazon Athena is an interactive serverless service used to analyze data directly in Amazon Simple Storage Service (S3) by
+                using standard SQL queries when needed.
+            </p>
+            <h2 class="blog__paragraph-subtitle">What are the functions of Athena?</h2>
+            <ul>
+                <li class="blog__subparagraph">Can analyze structured, unstructured, semi-structured data that is stored in Amazon S3</li>
+                <li class="blog__subparagraph">Can query data using Athena and SQL without actually loading the data into Athena (using metadata)</li>
+                <li class="blog__subparagraph">Can be integrated with Amazon Quicksight for data visualization</li>
+                <li class="blog__subparagraph">Can integrate with AWS Glue Data Catalog to store metadata in S3</li>
+                <li class="blog__subparagraph">Executes queries in parallel, so no micro managing of compute power</li>
+            </ul>
+            <h2 class="blog__paragraph-subtitle">What is the pricing of Athena?</h2>
+            <ul>
+                <li class="blog__subparagraph">Users are charged by the amount of data that is scanned, rated by the standard S3 pricing</li>
+                <li class="blog__subparagraph">Cancelled queries are charged for the amount of data scanned at the time of cancellation</li>
+                <li class="blog__subparagraph">There are no charges for DDL statements (SQL statements)</li>
+                <li class="blog__subparagraph">One can reduce costs through compressing the data, partitioning, or converting to columnar format</li>
+            </ul>
+            <h2 class="blog__paragraph-subtitle">Use case: Streaming Analytics</h2>
+            <p class="blog__subparagraph">
+                <img class="blog__analyticsimage" src="./AWSAnalyticsResources/AWSAnalytics.drawio.png">
+                In the following use case, we are analyzing streaming data from Amazon Kinesis Data Firehose.
+                The data initially is the clickstream from a user on a website.
+                Firehose takes the data, converts the data to columnar format, then stores it into an S3 bucket to be analyzed.
+                This data is stored in Amazon S3 by using the Kinesis Data Firehose.
+                The data is then analyzed using Athena from the S3 bucket
+                Finally, Amazon Quicksight is used to visualize the data and provide crucial insights for business intelligence services.
+            </p>
+        <!-- Elasticsearch -->
+            <h1 class="blog__paragraph-title" id="Elasticsearch"> Amazon Elasticsearch</h1>
+            <h2 class="blog__paragraph-subtitle">What is it? </h2>
+            <p class="blog__subparagraph">
+            </p>
+            <h2 class="blog__paragraph-subtitle">What are the functions of Elasticsearch?</h2>
+            <ul>
+                <li class="blog__subparagraph">Free and opensource search engine for all types of data: (textual, numerical, geospatial, structured, and unstructured)</li>
+                <li class="blog__subparagraph">Typically combined with Kibana allowing for visualization</li>
+            </ul>
+            <h2 class="blog__paragraph-subtitle">What is the pricing of Elasticsearch?</h2>
+            <ul>
+                <li class="blog__subparagraph">EC2 pricing for data retrieved</li>
+                <li class="blog__subparagraph">No charge for data transferred between zones</li>
+            </ul>
+            <h2 class="blog__paragraph-subtitle">Use case: </h2>
+            <p class="blog__subparagraph">
+                <img src="./AWSAnalyticsResources/AmazonElasticsearch.png">  
+                In this usecase, we will be monitoring the actions taken by customer support agents in a company. 
+                Amazon connect is a cloud contact center that allows the use of AI / ML to automate customer support interactions.
+                It is important to monitor decisions made by these AI / ML agents as they are made autonomously without human intervention.
+                If there was an issue with an action taken by an agent, one would want to know what the action was, the time it was taken, and the outcome of the action.
+                Amazon connect forwards the logs using Kinesis data streams, Kinesis data firehose, and Lambda functions to Amazon Elasticsearch and an S3 bucket.
+                Elasticsearch can be used to analyze the data and visualize the data with Kabana.
+                An example of a Kabana visualization is shown below.
+                <img src="./AWSAnalyticsResources/Kibana.jpeg">
+            </p>
+        <!-- EMR -->
+            <h1 class="blog__paragraph-title" id="emr"> Amazon EMR</h1>
+            <h2 class="blog__paragraph-subtitle">What is it? </h2>
+            <p class="blog__subparagraph">
+                Amazon EMR (Elastic Map Reduce) is a service for processing and analyzing large amounts of data in the cloud using apache hive, hadoop, apache flink, and apache spark.
+            </p>
+            <h2 class="blog__paragraph-subtitle">What are the functions of Amazon EMR?</h2>
+            <ul>
+                <li class="blog__subparagraph">Main component is collecting of EC2 instances (aka nodes)</li>
+                <li class="blog__subparagraph">Decouples compute and storage with EC2 by storing cluster data on S3</li>
+                <li class="blog__subparagraph">Controls the network access for instances</li>
+                <li class="blog__subparagraph">Offers monitoring, replacement of failed instances, and bug fixes</li>
+                <li class="blog__subparagraph">Analyzes machine learning workloads</li>
+                <li class="blog__subparagraph">Allows the use of 3 compute resources: EC2, EKS, and Outposts</li>
+
+            </ul>
+            <h2 class="blog__paragraph-subtitle">What is the pricing of Amazon EMR?</h2>
+            <ul>
+                <li class="blog__subparagraph">You pay a per-second rate for every second you use, with a one minute minimum</li>
+                <li class="blog__subparagraph">Example: 10-node cluster running for 10 hours costs the same as a 100-node cluster running for 1 hour</li>
+                <li class="blog__subparagraph">Dependent on the type of EC2 instances selected for the correct amount of processing power required</li>
+            </ul>
+            <h2 class="blog__paragraph-subtitle">Use case: </h2>
+            <p class="blog__subparagraph">
+                Amazon EMR is commonly used in Machine Learning, Big Data, and Bioinformatics. A common example would be a smart watch sending all data and running some select EC2 instances everytime new data is sent.
+            </p>
+        <!-- Data Streams -->
+            <h1 class="blog__paragraph-title" id="data_streams"> Amazon Data Streams</h1>
+            <h2 class="blog__paragraph-subtitle">What is it? </h2>
+            <p class="blog__subparagraph">
+                Realtime data streaming service. Captures GBs of data from sources like website clickstreams, events streams (database and location tracking), and social media feeds.
+                The Kinesis family is made up of the following: Datastreams, Firehose, Data Analytics, and Video Streams.
+            </p>
+            <h2 class="blog__paragraph-subtitle">What are the functions of Amazon Data Streams?</h2>
+            <ul>
+                <li class="blog__subparagraph">Producers produce data to be processed and it forwards the data to consumers that read or "consume" the data</li>
+                <li class="blog__subparagraph">Data streams are divided into shards/partitions whose default retention period is 1 day but can retain for up to 7 days</li>
+                <li class="blog__subparagraph">Kinesis producer library or KPL for short is a library allows for high throughput to the Kinesis data streams</li>
+                <li class="blog__subparagraph">Goal for Kinesis is to move batch data processing into real-time processing for critical objectives</li>
+
+
+            </ul>
+            <h2 class="blog__paragraph-subtitle">What is the pricing of Amazon Data Streams?</h2>
+            <ul>
+                <li class="blog__subparagraph">$0.04 per stream per hour</li>
+                <li class="blog__subparagraph">$0.08 data ingested, per GB (includes 24-hour retention)</li>
+                <li class="blog__subparagraph">$0.04 data retrievals, per GB</li>
+                <li class="blog__subparagraph">$0.10 data stored, per GB-month (beyond 24 hours, up to 7 days</li>
+            </ul>
+            <h2 class="blog__paragraph-subtitle">Use case: </h2>
+            <p class="blog__subparagraph">
+                This can be used for a variety of use cases, for example: fraud detection, live leaderboards, and video processing.
+                In this use case we will cover the latter. Using a security camera, we can forward the feed with Kinesis data streams.
+                This feed can fed into AWS Sagemaker / Rekognition Video to automatically detect objects in the video.
+                This has a variety of use cases ranging from detecting a firearm in a video, to detecting a person in a video.
+            </p>
+        <!-- Kinesis Data Firehose -->
+            <h1 class="blog__paragraph-title" id="firehose"> Amazon Kinesis Data Firehose</h1>
+            <h2 class="blog__paragraph-subtitle">What is it? </h2>
+            <p class="blog__subparagraph">
+                Serverless service that loads data stores and analytics services by capturing, transforming, and load streaming data.
+            </p>
+            <h2 class="blog__paragraph-subtitle">What are the functions of Amazon Kinesis Data Firehose?</h2>
+            <ul>
+                <li class="blog__subparagraph">Synchronously replicates data across 3 area zones</li>
+                <li class="blog__subparagraph">Allows for encryption before delivery</li>
+                <li class="blog__subparagraph">60 second batch latency, or minimum data transfer of 32 MB</li>
+                <li class="blog__subparagraph">Cloudwatch events can be source</li>
+            </ul>
+            <h2 class="blog__paragraph-subtitle">What is the pricing of Kinesis Data Firehose?</h2>
+            <ul>
+                <li class="blog__subparagraph">First 500 TB per month: $0.029 per GB ingested</li>
+                <li class="blog__subparagraph">Next 1.5 PB per month: $0.025 per GB ingested</li>
+                <li class="blog__subparagraph">Next 3 PB per month: $0.02 per GB ingested</li>
+            </ul>
+            <h2 class="blog__paragraph-subtitle">Use case: </h2>
+            <p class="blog__subparagraph">
+                The majority of the use cases for this service is to serve as a data transfer service to S3, Redshift, Elasticsearch, and Splunk.
+            </p>
+        <!-- Amazon MSK -->
+            <h1 class="blog__paragraph-title" id="msk"> Amazon MSK <br> (Managed Streaming for Apache Kafka)</h1>
+            <h2 class="blog__paragraph-subtitle">What is it? </h2>
+            <p class="blog__subparagraph">
+                Amazon MSk is a managed cluster service used to build and execute Apache Kafka Applications for the processing of streaming data.
+            </p>
+            <h2 class="blog__paragraph-subtitle">What are the functions of Amazon MSK?</h2>
+            <ul>
+                <li class="blog__subparagraph">Populates ML apps, analytical apps, data lakes, and stream changes to and from databases using Apache Kafka APIs</li>
+                <li class="blog__subparagraph">Easily configures applications by removing all the manual tasks used to configure</li>
+                <li class="blog__subparagraph">Replacing failing servers</li>
+                <li class="blog__subparagraph">Handling server patches and upgrades without downtime</li>
+                <li class="blog__subparagraph">Maintenance of Apache Clusters</li>
+                <li class="blog__subparagraph">Maintenance of Apache Zookeeper</li>
+                <li class="blog__subparagraph">Multi-AZ replication for Apache Kafka clusters</li>
+                <li class="blog__subparagraph">Planning scaling events</li>
+            </ul>
+            <h2 class="blog__paragraph-subtitle">What is the pricing of Amazon MSK?</h2>
+            <ul>
+                <li class="blog__subparagraph">Varies based on the time and CPU power of the instances rented (similar to EC2) </li>
+            </ul>
+            <h2 class="blog__paragraph-subtitle">How is it different from Kinesis?</h2>
+            <p class="blog__subparagraph">
+                Kinesis has at least once delivery, whereas MSK guarantees exactly once.
+            </p>
+            <h2 class="blog__paragraph-subtitle">Use case: Integration</h2>
+            <p class="blog__subparagraph">
+                Amazon MSK's sole purpose is to integrate well with AWS Glue, Kinesis Data Analytics, and Lambda.
+                Glue executes an Apache Spark job on a MSK Cluster, whereas RDA executes Apache Flink job on a Cluster.
+            </p>
+            <!-- Redshift -->
+            <h1 class="blog__paragraph-title" id="redshift"> Amazon Redshift</h1>
+            <h2 class="blog__paragraph-subtitle">What is it? </h2>
+            <p class="blog__subparagraph">
+                Fast and petabyte scale, SQL based, data warehouse to analyze data easily. Along with this, it is also commonly used to perform large scale data migrations.
+            </p>
+            <h2 class="blog__paragraph-subtitle">What are the functions of Amazon Redshift</h2>
+            <ul>
+                <li class="blog__subparagraph">Supports online analytical processing (OLAP) and analyzes using SQL and existing business intelligence tools (quicksight or tableau)</li>
+                <li class="blog__subparagraph">Redshift spectrum can query files on S3 using metadata and without loading</li>
+                <li class="blog__subparagraph">Can copy snapshots from one region to another</li>
+            </ul>
+            <h2 class="blog__paragraph-subtitle">What is the pricing of Amazon Redshift?</h2>
+            <ul>
+                <li class="blog__subparagraph">Starts small at $0.25 per hour and can scale up to petabytes of data and thousands of concurrent users</li>
+                <li class="blog__subparagraph">The node type one chooses to build their cluster effects pricing</li>
+                <li class="blog__subparagraph">The region where the cluster is located effects pricing</li>
+                <li class="blog__subparagraph">Billing strategy: on demand or reserved</li>
+            </ul>
+            <h2 class="blog__paragraph-subtitle">Use case: </h2>
+            <p class="blog__subparagraph">
+                The goal for Amazon Redshift is to allow for the building of an entire business intelligence to occur over a weekend.
+                Anytime one has data that needs to be analyzed from a data lake, they can use Amazon Redshift to analyze the data.
+                 
+            </p>
+            <!-- Glue -->
+            <h1 class="blog__paragraph-title" id="glue"> AWS Glue </h1>
+            <h2 class="blog__paragraph-subtitle">What is it? </h2>
+            <p class="blog__subparagraph">
+                AWS Glue is a serverless extract, transform, and load service used to categorize data and move data between various data stores and streams.
+            </p>
+            <h2 class="blog__paragraph-subtitle">What are the functions of AWS Glue?</h2>
+            <ul>
+                <li class="blog__subparagraph">Works with: Redshift (data warehouse), S3, Data Lakes, RDS, or EC2 (for data stores)  </li>
+                <li class="blog__subparagraph">Supports data integrations, data analytics, and ML</li>
+                <li class="blog__subparagraph">Central repository known as glue catalog that auto generates python/scala code</li>
+                <li class="blog__subparagraph">Acts as a bridge from multiple data sources to AWS Redshift</li>
+            </ul>
+            <h2 class="blog__paragraph-subtitle">What is the pricing of AWS Glue?</h2>
+            <ul>
+                <li class="blog__subparagraph">$0.44 per DPU hour, billed per second, with a 1 minute minimum.</li>
+                <li class="blog__subparagraph">$1.00 per 100,000 objects stored in the Glue Catalog per month</li>
+                <li class="blog__subparagraph">$1.00 per million requests for objects stored in the Glue Catalog per month</li>
+            </ul>
+            <h2 class="blog__paragraph-subtitle">Use case: </h2>
+            <p class="blog__subparagraph">
+                In a data centric world, we need ways to centralize data and make it easy to access for analysis and business intelligence. 
+                AWS Glue solves the problem of centralizing data by providing a service to merge data from multiple sources into a single data store.
+                This allows for easy access to data from multiple sources, and allows for easy data analysis.
+            </p>
+            <!-- Lake Formation -->
+            <h1 class="blog__paragraph-title" id="lake_formation"> AWS Lake Formation</h1>
+            <h2 class="blog__paragraph-subtitle">What is it? </h2>
+            <p class="blog__subparagraph">
+                AWS Lake Formation is a managed service that allows you to create, manage, and access data lakes. 
+                A data lake is a repository that stores all data in its original form and is used for analysis.
+            </p>
+            <h2 class="blog__paragraph-subtitle">What are the functions of AWS Lake Formation</h2>
+            <ul>
+                <li class="blog__subparagraph">Manages the creation/deletion of data lakes</li>
+                <li class="blog__subparagraph">Can secure data lakes</li>
+                <li class="blog__subparagraph">Built on S3 so it has the same 99.999999999% durability</li>
+                <li class="blog__subparagraph">Catalogs and indexes for analysis without data movement</li>
+            </ul>
+            <h2 class="blog__paragraph-subtitle">What is the pricing of AWS Lake Formation?</h2>
+            <ul>
+                <li class="blog__subparagraph">S3 Pricing applies here</li>
+                <li class="blog__subparagraph">$2.25 per TB of data scanned</li>
+            </ul>
+            <h2 class="blog__paragraph-subtitle">Use case: </h2>
+            <p class="blog__subparagraph">
+                Fanatics uses Amazon Simple Storage Service (Amazon S3) to provide secure, durable, and highly scalable storage for its analytical data. Using the Amazon S3 web service interface, the Fanatics data science team can easily store and quickly retrieve any amount of data. Taking advantage of its new AWS data lake solution, Fanatics is now able to analyze the huge volumes of data from its transactional, e-commerce, and back-office systems, and make this data available to its data scientists immediately for analytics.
+            </p>
+        </div>
+</div>
+
+
+
+    <!--==================== SCROLL TOP ====================-->
+    <a href="" class="scrollup" id="scroll-up">
+        <i class="uil uil-arrow-up scroll__icon"></i>
+    </a>
+
+    <!--==================== SWIPER JS ====================-->
+    <script src="../assets/js/swiper-bundle.min.js"></script>
+
+    <!--==================== MAIN JS ====================-->
+    <script src="../assets/js/main.js"></script>
+</body>
+   <!--==================== FOOTER ====================-->
+   <footer class="footer">
+    <div class="footer__bg">
+        <div class="footer__container container grid">
+            <div>
+                <h1 class="footer__title">Jared Zengo</h1>
+                <span class="footer__subtitle">Full Stack Developer</span>
+            </div>
+
+            <ul class="footer__links">
+                <li>
+                    <a href="#services" class="footer__link">Services</a>
+                </li>
+
+                <li>
+                    <a href="#blog" class="footer__link">Blog</a>
+                </li>
+
+                <li>
+                    <a href="#contact" class="footer__link">Contact Me</a>
+                </li>
+            </ul>
+
+            <div class="footer__socials">
+                <a href="https://www.linkedin.com/in/jared-zengo/" target="_blank" class="footer__social" class="footer__social">
+                    <i class="uil uil-linkedin-alt"></i>
+                </a>
+                <a href="https://www.github.com/jjz13744" target="_blank" class="footer__social" class="footer__social">
+                    <i class="uil uil-github-alt"></i>
+                </a>
+                <a href="https://www.twitter.com/JaredZengo/" target="_blank" class="footer__social" class="footer__social">
+                    <i class="uil uil-twitter-alt"></i>
+                </a>
+            </div>
+        </div>
+
+        <p class="footer__copy">&#169; Jared Zengo. All rights reserved.</p>
+    </div>
+</html>
