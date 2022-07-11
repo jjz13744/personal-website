@@ -102,21 +102,21 @@
             What will I learn from this?
         </h1>
             <ol>
-                <li class="blog__paragraph-list"><a class="blog__paragraph-list-text"href="BlogNotificationService#scraping" class="nav__link">Scraping a website with Python</a></li>
-                <li class="blog__paragraph-list"><a class="blog__paragraph-list-text"href="BlogNotificationService#Elasticsearch" class="nav__link">Amazon Elasticsearch</a></li>
-                <li class="blog__paragraph-list"><a class="blog__paragraph-list-text"href="BlogNotificationService#emr" class="nav__link">Amazon EMR</a></li>
-                <li class="blog__paragraph-list"><a class="blog__paragraph-list-text"href="BlogNotificationService#data_streams" class="nav__link">Amazon Data Streams</a></li>
-                <li class="blog__paragraph-list"><a class="blog__paragraph-list-text"href="BlogNotificationService#firehose" class="nav__link">Amazon Kinesis Data Firehose</a></li>
-                <li class="blog__paragraph-list"><a class="blog__paragraph-list-text"href="BlogNotificationService#msk" class="nav__link">Amazon MSK</a></li>
-                <li class="blog__paragraph-list"><a class="blog__paragraph-list-text"href="BlogNotificationService#redshift" class="nav__link">Amazon Redshift</a></li>
-                <li class="blog__paragraph-list"><a class="blog__paragraph-list-text"href="BlogNotificationService#glue" class="nav__link">AWS Glue</a></li>
+                <li class="blog__paragraph-list"><a class="blog__paragraph-list-text"href="BlogNotificationService#scraping" class="nav__link">Obtaining the HTML of the page</a></li>
+                <li class="blog__paragraph-list"><a class="blog__paragraph-list-text"href="BlogNotificationService#Elasticsearch" class="nav__link">Filtering HTML</a></li>
+                <li class="blog__paragraph-list"><a class="blog__paragraph-list-text"href="BlogNotificationService#emr" class="nav__link">Storing data into S3</a></li>
+                <li class="blog__paragraph-list"><a class="blog__paragraph-list-text"href="BlogNotificationService#data_streams" class="nav__link">Retrieving data from S3</a></li>
+                <li class="blog__paragraph-list"><a class="blog__paragraph-list-text"href="BlogNotificationService#firehose" class="nav__link">Dispatching notification with Twilio</a></li>
+                <li class="blog__paragraph-list"><a class="blog__paragraph-list-text"href="BlogNotificationService#msk" class="nav__link">Creating custom AWS Lambda Layer</a></li>
+                <li class="blog__paragraph-list"><a class="blog__paragraph-list-text"href="BlogNotificationService#redshift" class="nav__link">Testing with AWS Lambda</a></li>
+                <li class="blog__paragraph-list"><a class="blog__paragraph-list-text"href="BlogNotificationService#glue" class="nav__link">Scheduling using AWS Cloudwatch</a></li>
                 <li class="blog__paragraph-list"><a class="blog__paragraph-list-text"href="BlogNotificationService#lake_formation" class="nav__link">AWS Lake Formation</a></li>
             </ol>
             <br>
 
 <!-- Begin Here -->
         <!-- Athena -->
-            <h1 class="blog__paragraph-title" id="scraping"> Scraping a website with Python</h1>
+            <h1 class="blog__paragraph-title" id="scraping"> Obtaining the HTML of the page</h1>
             <h2 class="blog__paragraph-subtitle">What will we be doing? </h2>
             <p class="blog__subparagraph">
                 Our goal for this section is to parse the HTML of my friends blog and extract the titles of the posts.
@@ -148,7 +148,7 @@
                 Finally, Amazon Quicksight is used to visualize the data and provide crucial insights for business intelligence services.
             </p>
         <!-- Elasticsearch -->
-            <h1 class="blog__paragraph-title" id="Elasticsearch"> Amazon Elasticsearch</h1>
+            <h1 class="blog__paragraph-title" id="Elasticsearch"> Filtering HTML</h1>
             <h2 class="blog__paragraph-subtitle">What is it? </h2>
             <p class="blog__subparagraph">
             </p>
@@ -175,7 +175,7 @@
                 <img src="./AWSAnalyticsResources/Kibana.jpeg">
             </p>
         <!-- EMR -->
-            <h1 class="blog__paragraph-title" id="emr"> Amazon EMR</h1>
+            <h1 class="blog__paragraph-title" id="emr"> Storing data into S3</h1>
             <h2 class="blog__paragraph-subtitle">What is it? </h2>
             <p class="blog__subparagraph">
                 Amazon EMR (Elastic Map Reduce) is a service for processing and analyzing large amounts of data in the cloud using apache hive, hadoop, apache flink, and apache spark.
@@ -201,7 +201,7 @@
                 Amazon EMR is commonly used in Machine Learning, Big Data, and Bioinformatics. A common example would be a smart watch sending all data and running some select EC2 instances everytime new data is sent.
             </p>
         <!-- Data Streams -->
-            <h1 class="blog__paragraph-title" id="data_streams"> Amazon Data Streams</h1>
+            <h1 class="blog__paragraph-title" id="data_streams"> Retrieving data from S3</h1>
             <h2 class="blog__paragraph-subtitle">What is it? </h2>
             <p class="blog__subparagraph">
                 Realtime data streaming service. Captures GBs of data from sources like website clickstreams, events streams (database and location tracking), and social media feeds.
@@ -231,7 +231,7 @@
                 This has a variety of use cases ranging from detecting a firearm in a video, to detecting a person in a video.
             </p>
         <!-- Kinesis Data Firehose -->
-            <h1 class="blog__paragraph-title" id="firehose"> Amazon Kinesis Data Firehose</h1>
+            <h1 class="blog__paragraph-title" id="firehose"> Dispatching notification with Twilio</h1>
             <h2 class="blog__paragraph-subtitle">What is it? </h2>
             <p class="blog__subparagraph">
                 Serverless service that loads data stores and analytics services by capturing, transforming, and load streaming data.
